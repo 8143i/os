@@ -1,0 +1,21 @@
+ncr() {
+   n=$1
+   r=$2
+   if [ $r -eq 0 ] || [ $r -eq $n ]; then
+      echo 1
+      return
+   fi
+   if [ $r -eq 1 ]; then
+     echo $n
+     return
+   fi
+   a=$(ncr $((n-1)) $((r-1)))
+   b=$(ncr $((n-1)) $r)
+   echo $((a+b))
+}
+clear
+echo "enter n:"
+read n
+echo "enter r:"
+read r
+echo "ncr = $(ncr $n $r)"
