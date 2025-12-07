@@ -1,0 +1,10 @@
+clear
+echo "enter the string:"
+read s
+z=`echo $s|wc -m`
+while test $z -gt 0
+do
+echo -n `echo $s|cut -c $z`
+z=`expr $z - 1`
+done
+echo

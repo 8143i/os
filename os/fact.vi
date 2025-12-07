@@ -1,0 +1,12 @@
+clear
+echo "enter the number"
+read n
+a=1
+f=1
+while [ $a -le $n ]
+do
+f=`expr $f \* $a`
+a=`expr $a + 1`
+done
+echo "the factorial valu is $f"
+
