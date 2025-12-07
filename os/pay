@@ -1,0 +1,27 @@
+clear
+echo enter the no of employee
+read n
+while [ $n -gt 0 ]
+do
+echo enter the name 
+read name
+echo enter the idno
+read idno
+echo enter the total work time 
+read twktime
+echo enter the actual time
+read actualtime
+echo enter the cost
+read cost
+if [ $twktime -gt $actualtime ]
+then
+overtime=`expr $twktime - $actualtime`
+totalovercost=`expr $overtime \* $cost`
+echo the overtime $overtime
+echo the extra cost $totalovercost
+else
+echo no overtime
+fi
+n=`expr $n - 1`
+done
+
